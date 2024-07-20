@@ -1,0 +1,38 @@
+{
+    "name": "@karelpelcak/create-sveltekit-app",
+    "version": "2.1.3",
+    "description": "Create a SvelteKit",
+    "bin": "bin.js",
+    "scripts": {
+        "dev": "ts-node-dev --respawn ./src/index.ts",
+        "build": "mkdir -p lib && tsc -p tsconfig.json --outDir lib && cp -r src/projects/templates lib/projects",
+        "start": "node ./build/index.js",
+        "clear": "rm -r build",
+        "publ": "npm publish --access public",
+        "runTest": "pnpm build && rm -rf test && mkdir -p test && cd test && node ../build/index.js && cd .."
+    },
+    "keywords": [],
+    "author": "Karel Pelčák",
+    "license": "ISC",
+    "dependencies": {
+        "cli-color": "^2.0.4",
+        "create-svelte": "^6.1.1",
+        "enquirer": "^2.4.1",
+        "node-fetch": "^3.3.2"
+    },
+    "devDependencies": {
+        "@types/cli-color": "^2.0.6",
+        "@types/inquirer": "^9.0.7",
+        "@types/node": "^20.12.7",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.4.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/karelpelcak/createsveltekitapp.git"
+    },
+    "bugs": {
+        "url": "https://github.com/karelpelcak/createsveltekitapp/issues"
+    },
+    "homepage": "https://github.com/karelpelcak/createsveltekitapp#readme"
+}
